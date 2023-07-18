@@ -1,0 +1,44 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: "navigation navigation" "picture details";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas: "navigation" "details" "picture";
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-container {
+  margin-bottom: 10px;
+}
+
+.picture img {
+  width: 500px;
+  max-width: 80%;
+  margin: auto;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+p {
+  padding-top: 10px;
+}
+
+button {
+  margin: 0px;
+  margin-right: 50px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+h4 {
+  font-size: large;
+}

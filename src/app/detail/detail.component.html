@@ -1,0 +1,26 @@
+<div class="grid-container">
+  <section class="navigation" style="grid-area: navigation">
+    <button
+      *ngFor="let song of mySongs; let i = index"
+      (click)="showSongDetails(i)"
+      [class.selected]="i === selectedSongIndex"
+    >
+      {{ song.name }}
+    </button>
+  </section>
+
+  <section class="picture" style="grid-area: picture">
+    <img
+      [src]="'/assets/images/' + mySongs[selectedSongIndex].picture"
+      alt="Song Picture"
+    />
+  </section>
+
+  <section class="details" style="grid-area: details">
+    <h4>Details</h4>
+    <p>💿 Album: {{ mySongs[selectedSongIndex].name }}</p>
+    <p>🎙️ Artist: {{ mySongs[selectedSongIndex].artist }}</p>
+    <p>🔎 Genre: {{ mySongs[selectedSongIndex].genre }}</p>
+    <p>📋 Year Released: {{ mySongs[selectedSongIndex].yearReleased }}</p>
+  </section>
+</div>
